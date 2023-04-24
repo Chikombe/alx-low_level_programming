@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int m, i, j;
+	int i, j, m;
 
 	for (int i = '0'; i <= '9'; i++)
 	{
