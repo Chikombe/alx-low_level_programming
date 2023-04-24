@@ -8,11 +8,11 @@ int main(void)
 {
 	int i, j, m;
 
-	for (int i = '0'; i <= '9'; i++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		for (int j = '0'; j <= '9'; j++)
+		for (j = '0'; j <= '9'; j++)
 		{
-			for (int m = '0'; m <= '9'; m++)
+			for (m = '0'; m <= '9'; m++)
 			{
 				if (i < j && j < m)
 				{
