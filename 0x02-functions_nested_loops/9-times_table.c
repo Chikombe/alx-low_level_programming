@@ -19,8 +19,10 @@ void times_table(void)
 			prod = num * mult;
 
 			if (prod <= 9)
+			{
 				_putchar(32);
 				_putchar(prod + 48);
+			}
 			else
 			{
 				_putchar((prod / 10) + 48);
