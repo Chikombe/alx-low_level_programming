@@ -7,15 +7,13 @@
  * Return: 1 on success 0 otherwise
  */
 
-int _isupper(int c);
+int _isupper(int c)
 {
-	char c;
-
-	if (c == "C")
+	if (c >= 'A' && c <= 'Z')
 	{
 		return (1);
 	}
-	else if (c == "c")
+	else
 	{
 		return (0);
 	}
