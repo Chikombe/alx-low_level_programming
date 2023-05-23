@@ -9,7 +9,6 @@
  *
  * Description: Longer description
  */
-
 struct dog
 {
 	char *name;
@@ -20,7 +19,6 @@ struct dog
 /**
  * dog_t - typedef for struct dog
  */
-
 typedef struct dog dog_t;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
@@ -31,4 +29,3 @@ char _strcpy(char *dest, char *src);
 int _strlen(char *s);
 
 #endif
-
