@@ -59,23 +59,29 @@ size_t looped_listint_len(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
-	const listint_t *temp = head;
+	size_t nodes, index = 0;
 
-	while (temp != NULL)
+	nodes = looped_listint_len(head);
+
+	if (nodes == 0)
 	{
-		printf("[%p] %d\n", (void *)temp, temp->n);
-		count++;
-
-		if (temp <= temp->next)
+		for (; head != NULL; nodes++)
 		{
-			printf("-> [%p] %d\n", (void *)temp->next, temp->next->n);
-			fprintf(stderr, "Error linked list is a loop\n");
-			exit(98);
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
-
-		temp = temp->next;
 	}
 
-	return (count);
+	else
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+
+		printf("-> [%p] %d\n", (void *)head, head->n);
+	}
+
+	return (nodes);
 }
