@@ -50,7 +50,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int index;
 
-	printf("Magic: ");
+	printf(" Magic: ");
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
@@ -70,7 +70,7 @@ void print_magic(unsigned char *e_ident)
 
 void print_class(unsigned char *e_ident)
 {
-	printf("Class: ");
+	printf(" Class: ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -95,7 +95,7 @@ void print_class(unsigned char *e_ident)
 
 void print_data(unsigned char *e_ident)
 {
-	printf("Data: ");
+	printf(" Data: ");
 
 	switch (e_ident[EI_DATA])
 	{
@@ -117,7 +117,7 @@ void print_data(unsigned char *e_ident)
 
 void print_version(unsigned char *e_ident)
 {
-	printf("Version: %d", e_ident[EI_VERSION]);
+	printf(" Version: %d", e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
 	{
@@ -182,7 +182,6 @@ void print_osabi(unsigned char *e_ident)
  * print_abi - prints the ABI version of an ELF header
  * @e_ident: pointer to an array containing the ELF ABI version
  */
-
 void print_abi(unsigned char *e_ident)
 {
 	printf(" ABI Version: %d\n", e_ident[EI_ABIVERSION]);
@@ -193,7 +192,6 @@ void print_abi(unsigned char *e_ident)
  * @e_type: the ELF type
  * @e_ident: pointer to an array containing the ELF class
  */
-
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
@@ -227,7 +225,6 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
  * @e_ident: pointer to an array containing the ELF class
  * @e_entry: the address of the ELF entry point
  */
-
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
 	printf(" Entry point address: ");
@@ -250,7 +247,6 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
  * @elf: the file descriptor of the ELF file
  * Description: if the file can not be closed exit code 98
  */
-
 void close_elf(int elf)
 {
 	if (close(elf) == -1)
@@ -269,7 +265,6 @@ void close_elf(int elf)
  * Descriprion: if the file is not an ELF file or the function fails,
  * exit code 98
  */
-
 int main(int __attribute__((__unused__))argc, char *argv[])
 {
 	Elf64_Ehdr *header;
