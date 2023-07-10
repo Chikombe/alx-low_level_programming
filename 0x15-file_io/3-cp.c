@@ -10,7 +10,6 @@ void close_file(int fd);
  * @file: name of the file buffer is storing chars for
  * Return: pointer to the bewly allocated buffer
  */
-
 char *create_buffer(char *file)
 {
 	char *buffer;
@@ -42,7 +41,6 @@ void close_file(int fd)
 		exit(100);
 	}
 }
-
 /**
  * main - copies the contents of a file to another file
  * @argc: the number of arguments supplied to the program
