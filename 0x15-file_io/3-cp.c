@@ -54,7 +54,7 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int from, to, r;
+	int from, to, r, wr;
 	char *buffer;
 
 	if (argc != 3)
@@ -70,6 +70,14 @@ int main(int argc, char *argv[])
 
 	do {
 		if (from == -1 || r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
+
+		wr = write(to, buffer, r);
+		if (to == -1 || wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buffer);
