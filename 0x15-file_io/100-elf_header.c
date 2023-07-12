@@ -44,7 +44,6 @@ void check_elf(unsigned char *e_ident)
  * @e_ident: pointer to an array containing the ELF magic numbers
  * Description: Magic numbers are separated by spaces
  */
-
 void print_magic(unsigned char *e_ident)
 {
 	int index;
